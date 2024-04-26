@@ -6,16 +6,24 @@
   box-sizing: border-box;
 }
 
+.deburg1 {
+  border: red solid 1px;
+}
+.deburg2 {
+  border: 1px dashed blue;
+}
 body {
   font-family: "Manrope", sans-serif;
+  background: rgb(16, 16, 16);
 }
 .container {
   /* border: solid red 2px; */
   min-height: 100vh;
-  width: 98%;
+  /* width: 100%; */
   margin-inline: auto;
-  background-color: green;
 }
+
+/* header style start here */
 
 header {
   display: flex;
@@ -23,7 +31,7 @@ header {
   align-items: center;
   height: 96px;
   padding-inline: 40px;
-  border-bottom: solid white 2px;
+  border-bottom: solid rgba(0, 0, 0, 0.2) 2px;
   background: rgb(16, 16, 16);
   color: white;
 }
@@ -41,33 +49,183 @@ header {
 
 header nav {
   display: none;
-  position: absolute;
-  top: 85px;
-  left: 0;
   transition: ease-in;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 90px;
+  z-index: 1;
+
+  background: #ffffff;
+  border-radius: 0px 0px 8px 8px;
+  padding: 32px 24px;
 }
 
 nav ul {
   list-style: none;
   font-size: 13px;
-  padding: 10px 40px;
-  width: 200px;
-  background-color: rgb(16, 16, 16);
+  width: 100%;
   border-radius: 10px;
+  display: flex;
   flex-direction: column;
   line-height: 3;
+  gap: 16px;
+}
+nav ul li {
+  width: 100%;
+  padding-top: 52px;
+}
+nav ul #home,
+.show-on-laptop {
+  display: none;
 }
 
+.mobile-menu-items {
+  background-color: #f1f1f1;
+  position: relative;
+  color: black;
+  /* height: 165px; */
+  text-align: center;
+  display: flex;
+  /* gap: 17px; */
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 8px;
+  padding-bottom: 22px;
+}
+
+.mobile-menu-items picture {
+  width: 80px;
+  position: absolute;
+}
+
+.mobile-menu-items picture img {
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.mobile-menu-items .item-desc {
+  padding-top: 88px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.mobile-menu-items .item-desc .arrow-forward {
+  font-size: 13px;
+  margin-left: 12px;
+}
+
+.mobile-menu-items .item-desc p {
+  letter-spacing: 1.07px;
+}
 nav ul a {
   text-decoration: none;
-  color: white;
+  color: rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
+
+  /* HEADPHONES */
+
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 2px;
+}
+
+/* hero styles start here */
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 484px;
+  background: rgb(16, 16, 16);
+  /* background: #191919; */
+
+  background-image: url("../common-img/hero-bg-image.png");
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  /* background: #000; */
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  max-width: 328px;
+  gap: 24px;
+}
+.hero-text h4 {
+  /* NEW PRODUCT */
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+
+.hero-text h1 {
+  /* XX99 Mark II Headpho */
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  /* or 111% */
+  letter-spacing: 1.28571px;
+  text-transform: uppercase;
+}
+.hero-text p {
+  /* Experience natural, */
+
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.75;
+}
+
+.hero-text button {
+  /* See Product */
+
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  /* identical to box height */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 14px 30px 14px 30px;
+  width: 170px;
+  background: #d87d4a;
+  border: none;
+  align-self: center;
+}
+
+@media screen and (max-width: 328px) {
+  .hero-text {
+    width: 90%;
+  }
+  .hero-text h1 {
+    /* XX99 Mark II Headpho */
+
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 30px;
+    letter-spacing: 1.28571px;
+    text-transform: uppercase;
+  }
 }
 
 @media (min-width: 480px) {
   .container {
-    background-color: aqua;
-    width: 90%;
+    /* background-color: aqua; */
+    /* width: 90%; */
   }
   header .site-logo {
     margin-left: -20%;
@@ -76,18 +234,49 @@ nav ul a {
 
 @media (min-width: 768px) {
   .container {
-    width: 85%;
-    background-color: blueviolet;
+    /* width: 85%; */
+    /* background-color: blueviolet; */
   }
   header .site-logo {
     margin-left: 0;
   }
+  header nav {
+    padding: 60px 40px;
+  }
+  nav ul {
+    /* list-style: none; */
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    font-size: 13px;
+    border-radius: 0;
+    padding: 0;
+    margin-top: 0;
+    line-height: 0;
+    line-height: 3;
+  }
+  nav ul li {
+    width: 100%;
+  }
+  .mobile-menu-items {
+    margin-top: 0;
+  }
+
+  .hero-wrapper {
+  }
 }
 
 @media (min-width: 900px) {
+  header {
+    padding-inline: 11.5%;
+  }
+
   header nav {
     display: flex;
     position: static;
+    padding: 0;
+    background-color: rgb(16, 16, 16);
   }
   .menu-icon {
     display: none;
@@ -97,15 +286,51 @@ nav ul a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 460px;
-    font-size: 13px;
+    gap: 34px;
     border-radius: 0;
-    padding: none;
+    padding: 0;
     line-height: 0;
+  }
+  nav ul li {
+    padding: 0;
+  }
+  nav ul #home,
+  .show-on-laptop {
+    display: inline;
+  }
+
+  .mobile-menu-items {
+    display: none;
+  }
+
+  nav ul a {
+    color: white;
+  }
+  .hero-wrapper {
+    background-image: url("../common-img/hero-destop-bg.png");
+    background-position: 82% 100%;
+    justify-content: flex-start;
+    padding-inline: 11.5%;
+    background-size: contain;
+  }
+  .hero {
+    /* width: 100%;
+    display: flex;
+    justify-content: flex-start; */
+    /* align-self: start; */
+  }
+  .hero-text {
+    text-align: left;
+  }
+  .hero-text button {
+    align-self: flex-start;
   }
 }
 @media (min-width: 1440px) {
   .container {
     max-width: 1440px;
+  }
+  .hero-wrapper {
+    padding-inline: 165px;
   }
 }
